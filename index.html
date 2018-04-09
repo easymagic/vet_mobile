@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+    
+    <link rel="import" href="inc_header.html" />    
+
+
+	<!-- <script type="text/javascript" src="js/libraries/jquery.js"></script> -->
+
+</head>
+<body>
+
+<style type="text/css">
+	.vspacing{
+		margin-bottom: 11px;
+	}
+</style>	
+
+<div class="col-xs-12" data-api="consumer/login" >
+	
+	<div class="col-xs-12 vspacing" align="center">
+
+<div class="col-xs-12" align="center">
+	<img src="images/logo.jpg" style="
+    width: 128px;
+    border-radius: 50%;
+    margin-top: 44px;
+    margin-bottom: 5px;
+" />
+</div>
+
+	
+	  <label style="
+    font-size: 29px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 5px;
+">Consumer Login</label>	
+   
+	</div>
+
+  
+   <div class="col-xs-12">
+
+   	 <div align="center" data-log-message class="alert alert-default" id="status" style="display: none;"></div>
+   
+   </div>
+
+
+	<div class="col-xs-12 vspacing">
+		
+		<input type="text" data-param="email" class="form-control" placeholder="User Name" style="text-align: center;" />
+
+	</div>
+
+
+	<div class="col-xs-12 vspacing">
+		
+		<input type="password" data-param="password" class="form-control" placeholder="Password"  style="text-align: center;" />
+
+	</div>
+
+
+	<div class="col-xs-12 vspacing">
+		
+		<button type="button"  class="form-control btn btn-primary"  style="text-align: center;">
+        <i class="fas fa-sign-in-alt" style="float: left;"></i>
+
+        <span data-button data-waiting-text="Logging..." data-waiting-recover="Login.">
+		Login
+	   </span>
+	</button>
+
+	</div>
+
+
+	<div class="col-xs-12 vspacing" align="center">
+		<label style="
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 5px;">
+		 or don't have an account?
+	    </label>
+	</div>
+
+
+
+
+	<div class="col-xs-12 vspacing">
+		
+	<a href="consumer_register.html" class="form-control btn btn-default"  style="text-align: center;">
+        <i class="fas fa-sign-in-alt" style="float: left;"></i>
+        <span>
+		Register
+	   </span>
+	</a>
+
+	</div>
+
+
+</div>
+
+<script type="text/javascript">
+	__action('is_logged',[]);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+    
+    <link rel="import" href="inc_header.html" />    
+
+
+	<!-- <script type="text/javascript" src="js/libraries/jquery.js"></script> -->
+
+</head>
+<body>
+
+<style type="text/css">
+	.vspacing{
+		margin-bottom: 11px;
+	}
+</style>	
+
+<div id="list">
+
+	<div class="lst">
+		 <button data-green type="button">Click Green</button>
+		 <button data-red type="button">Click Red</button>
+	</div>
+
+	<div class="lst">
+		 <button data-green type="button">Click Green</button>
+		 <button data-red type="button">Click Red</button>
+	</div>
+
+
+	<div class="lst">
+		 <button data-green type="button">Click Green</button>
+		 <button data-red type="button">Click Red</button>
+	</div>
+
+
+
+</div>
+
+
+
+
+<script type="text/javascript">
+	(function($){
+		$(function(){
+
+           $('#list').on('click','.lst',function(e){
+           	
+           	// console.log($(e.target));
+           	
+           	if ($(e.target).is('[data-green]')){
+               // console.log('green');
+               $(this).css('background-color','green');
+           	}else if ($(e.target).is('[data-red]')){
+           		$(this).css('background-color','red');
+           	}
+
+           });
+
+		});
+	})(jQuery);
+</script>
+</body>
+</html>

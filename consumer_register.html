@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+    
+    <link rel="import" href="inc_header.html" />    
+
+
+  <!-- <script type="text/javascript" src="js/libraries/jquery.js"></script> -->
+
+</head>
+<body>
+
+<style type="text/css">
+  .vspacing{
+    margin-bottom: 11px;
+  }
+</style>  
+
+
+<!-- <div class="col-xs-12" data-container="__action('get_age',[])">
+
+  <input type="text" data-param="age"  data-required="not_empty" class="form-control" />
+  <button type="button" data-button>Analyse Age</button>
+
+  <div data-array>
+    
+    <list-template>
+       $output = '';
+       var $ages = __action('session',['ages']);
+       $.each($ages,function(k,v){
+        $output+='<div><b>' + v + '</b></div>';
+       });
+    </list-template>
+
+    <list-output>  
+    </list-output>  
+  </div>
+  
+</div>
+ -->
+<!--   <div class="col-xs-12">
+    
+    <div data-api="consumer/list" style="background-color: #fff;">
+      
+      <div data-array>
+        data-append
+        <list-template>
+          
+          var list = __action('session',['consumers']);
+          $output = '';
+          
+          $.each(list,function(k,v){
+            $output+='<div>' + v.email + '</div>';
+          });
+
+        </list-template>
+
+        <list-output></list-output>
+      </div>
+
+      <button type="button" data-sync-button data-waiting-text="Syncing" data-waiting-recover="Sync...">Sync</button>
+
+    </div>
+
+
+  </div>
+ -->
+
+
+<div class="col-xs-12" data-api="consumer/register">
+  
+  <div class="col-xs-12 vspacing" align="center">
+
+<div class="col-xs-12" align="center">
+  <img src="images/logo.jpg" style="
+    width: 128px;
+    border-radius: 50%;
+    margin-top: 44px;
+    margin-bottom: 5px;
+" />
+</div>
+
+  
+    <label style="
+    font-size: 29px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 5px;
+">Consumer Register</label>  
+   
+  </div>
+
+
+
+  
+   <div class="col-xs-12">
+
+     <div align="center" data-log-message class="alert alert-default" id="status" style="display: none;"></div>
+   
+   </div>
+
+
+  <div class="col-xs-12 vspacing">
+
+    <select class="form-control" data-switch data-required="not_empty">
+      <option value=" $value.account_type = 'company' ">--Select Account Type (Company By Default)--</option>
+      <option value=" $value.account_type = 'company' ">Company</option>
+      <option value=" $value.account_type = 'individual' ">Individual</option>
+    </select>
+
+
+    <input type="hidden" data-param="account_type" data-set="$value.account_type" />
+
+
+  </div>
+
+
+
+  <div class="col-xs-12 vspacing" data-show="($value.account_type == 'company')">
+    
+    <input type="text" data-param="name" class="form-control" placeholder="Company Name" style="text-align: center;" data-required="not_empty"/>
+
+  </div>
+
+
+  <div class="col-xs-12 vspacing" data-show="($value.account_type == 'individual')">
+    
+    <input type="text" data-param="surname" class="form-control" placeholder="Surname" style="text-align: center;" data-required="not_empty"/>
+
+  </div>
+  <div class="col-xs-12 vspacing" data-show="($value.account_type == 'individual')">
+    
+    <input type="text" data-param="first_name" class="form-control" placeholder="First Name" style="text-align: center;" data-required="not_empty"/>
+
+  </div>
+  <div class="col-xs-12 vspacing" data-show="($value.account_type == 'individual')" >
+    
+    <input type="text" data-param="last_name" class="form-control" placeholder="Last Name" style="text-align: center;" data-required="not_empty"/>
+
+  </div>
+
+  <div class="col-xs-12 vspacing" data-show="($value.account_type == 'individual')">
+
+    <select class="form-control" data-param="gender" data-required="not_empty">
+      <option value="">--Select Gender--</option>
+      <option value="m">Male</option>
+      <option value="f">Female</option>
+    </select>
+    
+
+  </div>
+
+
+<!--   <div class="col-xs-12 vspacing" data-array="get_numbers">
+   $output='start>>';
+   for (var i in $data){
+      $output+= '<div >' + $data[i] + '</div>';
+   }
+   $output+='||stop.';
+  </div>
+ -->
+
+
+  <div class="col-xs-12 vspacing">
+    
+    <input type="text" data-param="phone" class="form-control" placeholder="Phone" style="text-align: center;" data-required="not_empty"/>
+
+  </div>
+  <div class="col-xs-12 vspacing">
+    
+    <input type="text" data-param="address" class="form-control" placeholder="Address" style="text-align: center;" />
+
+  </div>
+
+
+  <div class="col-xs-12 vspacing">
+    
+    <input type="text" data-param="email" class="form-control" placeholder="E-mail" style="text-align: center;" data-required="email"  />
+    <!-- data-set="__action('session',['consumer_data']).auth_data.email" -->
+
+  </div>
+
+
+
+  <div class="col-xs-12 vspacing">
+    
+    <input type="password" data-param="password" class="form-control" placeholder="Password"  style="text-align: center;" />
+
+  </div>
+
+
+  <div class="col-xs-12 vspacing">
+    
+    <input type="password" data-param="password2" class="form-control" placeholder="Password"  style="text-align: center;" />
+
+  </div>
+
+
+
+  <div class="col-xs-12 vspacing">
+    
+    <button type="button" class="form-control btn btn-default"  style="text-align: center;">
+        <i class="fas fa-sign-in-alt" style="float: left;"></i>
+
+        <span data-button data-waiting-text="Registerring..." data-waiting-recover="Register.">
+    Register
+     </span>
+  </button>
+
+  </div>
+
+
+  <div class="col-xs-12 vspacing" align="center">
+    <label style="
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 5px;">
+     or have an account?
+      </label>
+  </div>
+
+
+
+
+  <div class="col-xs-12 vspacing">
+    
+  <a href="index.html" class="form-control btn btn-primary"  style="text-align: center;">
+        <i class="fas fa-sign-in-alt" style="float: left;"></i>
+        <span>
+    Login
+     </span>
+  </a>
+
+  </div>
+
+
+</div>
+
+<script type="text/javascript">
+  __action('is_logged',[]);
+</script>
+
+</body>
+</html>

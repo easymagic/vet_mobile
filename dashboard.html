@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+    <link rel="import" href="inc_header.html" />    
+
+
+	<!-- <script type="text/javascript" src="js/libraries/jquery.js"></script> -->
+
+</head>
+<body style="background-image: 'images/bg1.jpeg';">
+
+<style type="text/css">
+	.vspacing{
+		margin-bottom: 11px;
+	}
+</style>	
+
+<div class="col-xs-12" style="padding: 0;">
+	
+	<div class="col-xs-12 vspacing r2-nav" align="center">
+	
+	  <label>Welcome </label>	
+   
+	</div>
+
+
+<div class="col-xs-12" align="center">
+  <img src="images/logo.jpg" style="
+    width: 128px;
+    border-radius: 50%;
+    margin-top: 30px;
+    margin-bottom: 5px;
+" />
+</div>
+  
+   <div class="col-xs-12">
+
+   	 <div class="alert alert-info" id="status" style="display: none;"></div>
+   
+   </div>
+
+
+	<div class="col-xs-12 vspacing">
+
+
+        <a href="employ_talent.html"  class="btn btn-success form-control clk" data-id="sync-tables">
+          <i class="fas fa-sync-alt" style="float: left;"></i>
+          Employ Talent
+
+        </a>
+
+
+	</div>
+
+
+  <div class="col-xs-12 vspacing">
+
+
+        <a href="vacate_talent.html"  class="btn btn-success form-control clk" data-id="sync-tables">
+          <i class="fas fa-sync-alt" style="float: left;"></i>
+          Vacate Talent
+
+        </a>
+
+
+  </div>
+
+
+	<div class="col-xs-12 vspacing">
+		
+
+        <a href="talent_register.html" class="btn btn-success form-control clk" data-id="sync-menu-items">
+<i class="fas fa-sync-alt" style="float: left;"></i>
+          Register Talent
+
+        </a>
+
+
+	</div>
+
+
+  <div class="col-xs-12 vspacing">
+    
+
+        <a href="analyse_talent.html" class="btn btn-success form-control clk" data-id="sync-settings">
+<i class="fas fa-sync-alt" style="float: left;"></i>
+          Analyse Talent
+
+
+        </a>
+
+
+  </div>
+
+
+	<div class="col-xs-12 vspacing">
+		
+
+        <button data-ob="logout" class="btn btn-danger form-control" id="log-out">
+        <i class="fas fa-sign-out-alt" style="float: left;"></i>
+        Log-Out
+        </button>
+
+
+	</div>
+
+
+</div>
+
+<script type="text/javascript">
+	(function($){
+		$(function(){
+			
+ __action('is_not_logged');
+
+
+		});
+	})(jQuery);
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+    
+    <link rel="import" href="inc_header.html" />    
+
+
+</head>
+<body>
+
+<style type="text/css">
+  .vspacing{
+    margin-bottom: 11px;
+  }
+</style>  
+
+
+
+
+<div class="col-xs-12" data-api="talent_consumer/register">
+  
+  <div class="col-xs-12 vspacing" align="center">
+
+<div class="col-xs-12" align="center">
+  <img src="images/logo.jpg" style="
+    width: 128px;
+    border-radius: 50%;
+    margin-top: 44px;
+    margin-bottom: 5px;
+" />
+</div>
+
+  
+    <label style="
+    font-size: 29px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 5px;
+">Employ Talent</label>  
+   
+  </div>
+
+
+
+  
+   <div class="col-xs-12">
+
+     <div align="center" data-log-message class="alert alert-default" id="status" style="display: none;"></div>
+   
+   </div>
+
+
+
+
+
+  <div class="col-xs-12 vspacing">
+    
+    <input type="email" data-param="email" class="form-control" placeholder="E-mail" style="text-align: center;" data-required="not_empty"/>
+
+    <input type="hidden" data-param="consumer_id" data-set="__action('session',['consumer_data']).auth_data.id" />
+
+  </div>
+
+
+  <div class="col-xs-12 vspacing">
+    
+    <input type="text" data-param="phone" class="form-control" placeholder="Phone" style="text-align: center;" data-required="not_empty"/>
+
+  </div>
+
+  <div class="col-xs-12 vspacing">
+    
+    <input type="text" data-param="bvn" class="form-control" placeholder="BVN" style="text-align: center;" data-required="not_empty"/>
+
+  </div>
+
+
+
+  <div class="col-xs-12 vspacing">
+    
+    <button type="button" class="form-control btn btn-default"  style="text-align: center;">
+        <i class="fas fa-sign-in-alt" style="float: left;"></i>
+
+        <span data-confirm data-button data-waiting-text="Employing..." data-waiting-recover="Employ.">
+    Employ
+     </span>
+  </button>
+
+  </div>
+
+
+
+  <div class="col-xs-12 vspacing">
+    
+  <a href="dashboard.html" class="form-control btn btn-primary"  style="text-align: center;">
+        <i class="fas fa-sign-in-alt" style="float: left;"></i>
+        <span>
+    Back
+     </span>
+  </a>
+
+  </div>
+
+
+</div>
+
+<script type="text/javascript">
+  __action('is_not_logged',[]);
+</script>
+
+</body>
+</html>

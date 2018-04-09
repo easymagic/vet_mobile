@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+    
+    <link rel="import" href="inc_header.html" />    
+
+
+  <!-- <script type="text/javascript" src="js/libraries/jquery.js"></script> -->
+
+</head>
+<body>
+
+<style type="text/css">
+  .vspacing{
+    margin-bottom: 11px;
+  }
+</style>  
+
+
+
+<div class="col-xs-12" data-blank>
+  
+  <div class="col-xs-12 vspacing" align="center">
+
+<div class="col-xs-12" align="center">
+  <img src="images/logo.jpg" style="
+    width: 128px;
+    border-radius: 50%;
+    margin-top: 44px;
+    margin-bottom: 5px;
+" />
+</div>
+
+  
+    <label style="
+    font-size: 29px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 5px;
+">Talent Analysis</label>  
+   
+  </div>
+
+
+
+  
+   <div class="col-xs-12">
+
+     <div align="center" data-log-message class="alert alert-default" id="status" style="display: none;"></div>
+   
+   </div>
+
+
+
+<div class="col-xs-12 vspacing" data-array>
+  <script type="text/html">
+    $output = '';
+    var list = [{name:'bvn','label':'BVN'},{name:'phone','label':'Phone Number'},
+    {name:'email','label':'E-mail'},{name:'account_number','label':'Acc. Number'}];
+
+    $.each(list,function(k,v){
+       
+       $output+='<div class="col-xs-12 vspacing" data-api="talent/analyse/' + v.name + '">
+    
+    <div align="center">
+    <input type="text" data-skip-clear data-param="' + v.name + '" class="form-control" placeholder="' + v.label + '" style="text-align: center;margin-bottom: 7px;" data-required="not_empty"/>
+    </div>    
+    <div align="center">
+      <button type="button" class="btn btn-warning form-control" data-button data-waiting-text="Analysing..." data-waiting-recover="Analyse.">Analyse</button>
+    </div>
+
+    <div id="' + v.name + '" data-array data-array-post="#array-post" data-array-id="talent/analyse/' + v.name + '">
+      <list-output></list-output>
+    </div>
+
+  </div>';
+ 
+    });
+  </script>
+  <list-output></list-output>
+</div>
+
+
+
+
+    <div align="center" id="array-post">
+      <script type="text/html">
+        $output='';
+        
+        var list = __action('session',[$id]);
+
+        $output+= '
+        <div class="panel panel-primary" style="
+    margin-top: 3px;
+">
+        <div class="panel-heading">'
+         + list.data.length + ' Occurences...
+        </div>  
+        <div class="panel-body" data-v-slide style="background-color: #fff;">
+          View more >>>
+          <div class="panel-body">
+            ';
+
+          $.each(list.data,function(k,v){
+            
+            $output+='
+             
+             <div class="col-xs-12" align="right">
+               <b style="color: green;">(' + v.date_created + ')</b>
+             </div>
+             <div class="col-xs-12">
+               <label>
+                 <b style="color: blue;">Surname :</b> ' + v.surname + '
+               </label>
+             </div>
+             <div class="col-xs-12">
+               <label>
+                 <b style="color: blue;">First Name :</b> ' + v.first_name + '
+               </label>
+             </div>
+             <div class="col-xs-12">
+               <label>
+                 <b style="color: blue;">Last Name :</b> ' + v.last_name + '
+               </label>
+             </div>
+             <div class="col-xs-12">
+               <label>
+                 <b style="color: blue;">E-mail :</b> ' + v.email + '
+               </label>
+             </div>
+
+             <div class="col-xs-12">
+               <label>
+                 <b style="color: blue;">BVN :</b> ' + v.bvn + '
+               </label>
+             </div>
+             <div class="col-xs-12">
+               <label>
+                 <b style="color: blue;">Phone :</b> ' + v.phone + '
+               </label>
+             </div>
+             <div class="col-xs-12">
+               <label>
+                 <b style="color: blue;">Account Number :</b> ' + v.account_number + '
+               </label>
+             </div>
+             <div class="col-xs-12" style="border-bottom: 2px solid #555;">
+             </div>
+
+
+            ';
+
+          });  
+
+         $output+='
+          </div>
+        </div>
+       </div>';
+        
+        
+      </script>
+      <list-output></list-output>
+    </div>
+
+
+
+
+  <div class="col-xs-12 vspacing">
+    
+    <button type="button" class="form-control btn btn-default"  style="text-align: center;">
+        <i class="fas fa-sign-in-alt" style="float: left;"></i>
+
+        <span data-trigger-batch="['data-button']">
+          Run Analysis
+        </span>
+  </button>
+
+  </div>
+
+
+  <div class="col-xs-12 vspacing">
+    
+  <a href="dashboard.html" class="form-control btn btn-primary"  style="text-align: center;">
+        <i class="fas fa-sign-in-alt" style="float: left;"></i>
+        <span>
+    Back
+     </span>
+  </a>
+
+  </div>
+  
+
+
+
+
+
+</div>
+
+<script type="text/javascript">
+  __action('is_not_logged',[]);
+</script>
+
+</body>
+</html>
