@@ -298,7 +298,7 @@ $('body').on('click','[data-api],[data-container]',function(e){
    	   __action('ajax_loading');
 
 		   $.ajax({
-		    url:'http://localhost/vet/actions/api/' + api,
+		    url:'http://r2soft.com.ng/vet2/actions/api/' + api,
 		    type:'post',
 		    data:{
 		      post_data:$request.collect
